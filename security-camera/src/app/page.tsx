@@ -195,7 +195,7 @@ export default function CameraStreamPage() {
     document.addEventListener("visibilitychange", handleVisibilityChange);
     return () =>
       document.removeEventListener("visibilitychange", handleVisibilityChange);
-  }, []);
+  }, [socket]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -210,7 +210,7 @@ export default function CameraStreamPage() {
         clearTimeout(reconnectTimeoutRef.current);
       }
     };
-  }, []);
+  }, [socket]);
 
   return (
     <div className="max-w-7xl mx-auto p-5">
